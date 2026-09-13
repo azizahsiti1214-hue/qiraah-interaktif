@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan Qira'ah</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+            direction: rtl;
+        }
+
+        .kosakata {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #arti {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="kosakata">
+        غَادَرَ
+    </div>
+
+    <button onclick="tampilkanArti()">
+        لِرُؤْيَةِ الْمَعْنَى
+    </button>
+
+    <div id="arti">
+        Artinya: meninggalkan
+    </div>
+
+    <script>
+        function tampilkanArti() {
+            document.getElementById("arti").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
