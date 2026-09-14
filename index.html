@@ -1,79 +1,23 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    direction: rtl;
-    margin: 0;
-    padding: 15px;
-}
-
-.kosakata {
-    display: inline-block;
-    margin: 6px;
-    padding: 10px 16px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: white;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.kosakata:hover {
-    background: #f0f0f0;
-}
-
-.popup {
-    display: none;
-    margin: 15px auto 0;
-    padding: 12px;
-    max-width: 300px;
-    border-radius: 10px;
-    background: #f5f5f5;
-    font-size: 18px;
-    direction: ltr;
-}
-
-.popup strong {
-    direction: rtl;
-}
-</style>
-</head>
-
-<body>
-
-<div>
-    <button class="kosakata" onclick="tampilkanArti('meninggalkan')">
-        غَادَرَ
-    </button>
-
-    <button class="kosakata" onclick="tampilkanArti('tempat miqat')">
-        الْمِيقَاتُ
-    </button>
-
-    <button class="kosakata" onclick="tampilkanArti('memakai')">
-        لَبِسَ
-    </button>
-
-    <button class="kosakata" onclick="tampilkanArti('berniat')">
-        نَوَى
-    </button>
+<div class="kosakata" onclick="tampilkanArti('meninggalkan')">
+    غَادَرَ
 </div>
 
-<div id="popup" class="popup"></div>
+<div class="kosakata" onclick="tampilkanArti('tempat miqat')">
+    الْمِيقَاتُ
+</div>
 
-<script>
-function tampilkanArti(arti) {
-    document.getElementById("popup").innerHTML =
-        "<strong>المعنى:</strong> " + arti;
+<div class="kosakata" onclick="tampilkanArti('memakai')">
+    لَبِسَ
+</div>
 
-    document.getElementById("popup").style.display = "block";
-}
-</script>
+<div class="kosakata" onclick="tampilkanArti('berniat')">
+    نَوَى
+</div>
 
-</body>
-</html>
+<div class="kosakata" onclick="tampilkanArti('melakukan tawaf')">
+    طَافَ
+</div>
+
+<div class="kosakata" onclick="tampilkanArti('melakukan sa’i')">
+    سَعَى
+</div>
