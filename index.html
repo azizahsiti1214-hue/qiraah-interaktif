@@ -1,23 +1,218 @@
-<div class="kosakata" onclick="tampilkanArti('meninggalkan')">
-    غَادَرَ
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px 15px;
+            font-family: Arial, sans-serif;
+            background: transparent;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .petunjuk {
+            text-align: center;
+            direction: ltr;
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        /* Susunan 2 kolom */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        /* Kartu */
+        .card {
+            height: 150px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        /* Bagian yang berputar */
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        /* Saat diklik */
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Depan dan belakang */
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            backface-visibility: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow: 0 5px 15px rgba(0, 70, 140, 0.15);
+        }
+
+        /* DEPAN */
+        .card-front {
+            background: #dceeff;
+            border: 2px solid #a9d5f5;
+            direction: rtl;
+            font-size: 30px;
+            font-weight: bold;
+            color: #145a8d;
+        }
+
+        /* BELAKANG */
+        .card-back {
+            background: white;
+            border: 2px solid #d5e8f5;
+            transform: rotateY(180deg);
+            direction: ltr;
+            font-size: 21px;
+            font-weight: 600;
+            color: #145a8d;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Efek ketika diarahkan */
+        .card:hover .card-front {
+            box-shadow: 0 8px 20px rgba(0, 70, 140, 0.22);
+        }
+
+        /* Tampilan HP */
+        @media (max-width: 500px) {
+            .cards {
+                gap: 12px;
+            }
+
+            .card {
+                height: 125px;
+            }
+
+            .card-front {
+                font-size: 25px;
+            }
+
+            .card-back {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="petunjuk">
+        Klik kartu untuk melihat arti.
+    </div>
+
+    <div class="cards">
+
+        <!-- Kartu 1 -->
+        <div class="card" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    غَادَرَ
+                </div>
+
+                <div class="card-back">
+                    meninggalkan
+                </div>
+            </div>
+        </div>
+
+        <!-- Kartu 2 -->
+        <div class="card" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    الْمِيقَاتُ
+                </div>
+
+                <div class="card-back">
+                    tempat miqat
+                </div>
+            </div>
+        </div>
+
+        <!-- Kartu 3 -->
+        <div class="card" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    لَبِسَ
+                </div>
+
+                <div class="card-back">
+                    memakai
+                </div>
+            </div>
+        </div>
+
+        <!-- Kartu 4 -->
+        <div class="card" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    نَوَى
+                </div>
+
+                <div class="card-back">
+                    berniat
+                </div>
+            </div>
+        </div>
+
+        <!-- Kartu 5 -->
+        <div class="card" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    طَافَ
+                </div>
+
+                <div class="card-back">
+                    melakukan tawaf
+                </div>
+            </div>
+        </div>
+
+        <!-- Kartu 6 -->
+        <div class="card" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    سَعَى
+                </div>
+
+                <div class="card-back">
+                    melakukan sa'i
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
-<div class="kosakata" onclick="tampilkanArti('tempat miqat')">
-    الْمِيقَاتُ
-</div>
-
-<div class="kosakata" onclick="tampilkanArti('memakai')">
-    لَبِسَ
-</div>
-
-<div class="kosakata" onclick="tampilkanArti('berniat')">
-    نَوَى
-</div>
-
-<div class="kosakata" onclick="tampilkanArti('melakukan tawaf')">
-    طَافَ
-</div>
-
-<div class="kosakata" onclick="tampilkanArti('melakukan sa’i')">
-    سَعَى
-</div>
+</body>
+</html>
